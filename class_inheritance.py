@@ -13,12 +13,13 @@ class Student:
         return int(self.marks*self.perc_rise)
 
 class Dumb(Student):
-    pass
-std_1 = Student('Swapna','Shruthi',90)
-print(std_1.fullname())
-print(std_1.apply_rise())
-print(std_1.perc_rise)
-print(std_1.marks)
-stdDumb = Dumb('Dumb','Dumb',20)
-print(stdDumb.fullname())
-print(help(Dumb))
+   perc_rise = 1.10
+
+   def __init__(self,first,last,marks,lang):
+       super().__init__(first,last,marks)
+       self.lang = lang
+
+stdDumb = Dumb('Dumb','Dumb',40,'Python')
+print(stdDumb.first)
+print(stdDumb.lang)
+print(stdDumb.apply_rise())
